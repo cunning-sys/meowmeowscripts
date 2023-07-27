@@ -23,7 +23,7 @@ getgenv().Banana = {
        AutoBuso = false, -- auto haki
    }
 };if Loaded then return end;getgenv().Loaded=true;
-local Status, Script = pcall(game.HttpGet, game, 'https://raw.githubusercontent.com/ao-0/Banana-Inc/main/BananaPortableLoader.rbxm');
+local Status, Script = pcall(game.HttpGet, game, 'https://raw.githubusercontent.com/cunning-sys/meowmeowscripts/main/bananaautofarm.lua');
 if Status then
    loadstring(Script)();
 else
