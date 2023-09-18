@@ -22,8 +22,9 @@ end
   
 function IsTarget()
     local Ball = FindBall()
-
-    if Ball:GetAttribute("target") == LocalPlayer.Name then
+    
+	
+    if Ball and Ball:GetAttribute("target") == LocalPlayer.Name then
         return true
     end
     return false
@@ -31,22 +32,24 @@ end
 
 function DetectBall()
     local Ball = FindBall()
+    
+  	if Ball then
+        local BallVelocity = Ball.Velocity.Magnitude
+        local BallPosition = Ball.Position
   
-    local BallVelocity = Ball.Velocity.Magnitude
-    local BallPosition = Ball.Position
+        local PlayerPosition = LocalPlayer.Character.HumanoidRootPart.Position
   
-    local PlayerPosition = LocalPlayer.Character.HumanoidRootPart.Position
+        local Distance = (BallPosition - PlayerPosition).Magnitude
+        local PingAccountability = BallVelocity * (game.Stats.Network.ServerStatsItem["Data Ping"]:GetValue() / 1000)
   
-    local Distance = (BallPosition - PlayerPosition).Magnitude
-    local PingAccountability = BallVelocity * (game.Stats.Network.ServerStatsItem["Data Ping"]:GetValue() / 1000)
+        Distance -= PingAccountability
+        Distance -= shared.config.adjustment
   
-    Distance -= PingAccountability
-    Distance -= shared.config.adjustment
+        local Hit = Distance / BallVelocity
   
-    local Hit = Distance / BallVelocity
-  
-    if Hit <= shared.config.hit_range then
-        return true
+        if Hit <= shared.config.hit_range then
+            return true
+        end
     end
     return false
 end
@@ -73,8 +76,8 @@ UserInputService.InputBegan:Connect(function(Input, IsTyping)
         end
     elseif shared.config.mode == 'Hold' and Input.KeyCode == shared.config.keybind and shared.config.notifications then
         game:GetService("StarterGui"):SetCore("SendNotification",{
-        Title = "Blade Ball",
-        Text = 'Holding keybind!',
+            Title = "Blade Ball",
+            Text = 'Holding keybind!',
         })
     end
 end)
