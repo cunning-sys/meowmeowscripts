@@ -31,4 +31,4 @@ else
 end
 ```
 
-### [Blade Ball Auto-Parry](https://www.roblox.com/games/2753915549/Blox-Fruits) | [V3rmillion Thread](https://www.roblox.com/games/2753915549/Blox-Fruits)
+### [Blade Ball Auto-Parry](https://www.roblox.com/games/13772394625) | [V3rmillion Thread](https://v3rmillion.net/showthread.php?tid=1216762)
