@@ -32,3 +32,17 @@ end
 ```
 
 ### [Blade Ball Auto-Parry](https://www.roblox.com/games/13772394625) | [V3rmillion Thread](https://v3rmillion.net/showthread.php?tid=1216762)
+
+```lua
+shared.config = {
+    adjustment = 3.7, -- // Keep this between 3 to 4 \\ --
+    hit_range = 0.5, -- // You can mess around with this \\ --
+
+    mode = 'Hold', -- // Hold , Toggle , Always \\ --
+    deflect_type = 'Remote', -- // Key Press , Remote \\ --
+    notifications = true,
+    keybind = Enum.KeyCode.E
+}
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/cunning-sys/meowmeowscripts/main/bladeball.lua'),true))()
+```
