@@ -1,4 +1,4 @@
-### [Blox Fruits Autofarm]([discord.gg/catgirlcc](https://www.roblox.com/games/2753915549/Blox-Fruits))
+### [Blox Fruits Autofarm](https://www.roblox.com/games/2753915549/Blox-Fruits)
 
 ```lua
 getgenv().Banana = {
@@ -30,3 +30,5 @@ else
    game:GetService('Players').LocalPlayer:Kick('Failed to connect to github');
 end
 ```
+
+### [Blade Ball Auto-Parry](https://www.roblox.com/games/2753915549/Blox-Fruits) | [V3rmillion Thread](https://www.roblox.com/games/2753915549/Blox-Fruits)
