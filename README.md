@@ -46,3 +46,22 @@ shared.config = {
 
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/cunning-sys/meowmeowscripts/main/bladeball.lua'),true))()
 ```
+
+### [Follow Players w/ Blade Ball Support](https://www.roblox.com/games/13772394625) | [Source](https://raw.githubusercontent.com/cunning-sys/meowmeowscripts/main/aifollow.lua)
+
+```lua
+shared.config = {
+	enabled = true,
+	auto_jump = true,
+	position = 'Behind', -- Behind , Front , Normal
+	position_offset = 5, -- Only works if position is Behind or Front
+	player_detection = 'Closest', -- Closest , Farthest , Ball Target
+	
+	bladeball = {
+		local_alive_check = true,
+		alive_check = true
+	}
+}
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/cunning-sys/meowmeowscripts/main/aifollow.lua'),true))()
+```
