@@ -5,6 +5,7 @@ local LocalPlayer = Players.LocalPlayer
 local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
 local Target;
 local TargetCFrame;
+local CheckPing = false
 
 LocalPlayer.CharacterAdded:Connect(function(char)
 	Character = char
@@ -156,8 +157,15 @@ end
 
 game:GetService('RunService').PostSimulation:Connect(function()
 	if shared.config.serverhop.enabled then
-		if #Players:GetPlayers() >= shared.config.serverhop.player_threshold then
-			ServerHop()
+		if #Players:GetPlayers() <= shared.config.serverhop.player_threshold then
+            print('player')
+			--ServerHop()
+		end
+		if shared.config.serverhop.ping_check and CheckPing then
+			if game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue() >= shared.config.serverhop.ping_threshold then
+                print('ping')
+				--ServerHop()
+			end
 		end
 	end
 
@@ -196,3 +204,9 @@ for i,v in pairs(getconnections(LocalPlayer.Idled)) do
 end
 
 getgenv().executed = true
+
+if shared.config.serverhop.ping_check then
+	wait(shared.config.serverhop.load_time)
+
+	CheckPing = true
+end
