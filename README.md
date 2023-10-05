@@ -58,7 +58,10 @@ shared.config = {
 	player_detection = 'Closest', -- Closest , Farthest , Ball Target
 	serverhop = {
 		enabled = true,
-		player_threshold = 5
+		player_threshold = 3,
+		ping_check = true,
+		ping_threshold = 150,
+		load_time = 10 -- Time before it starts checking ping
 	},
 	bladeball = {
 		local_alive_check = true,
