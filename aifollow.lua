@@ -158,13 +158,11 @@ end
 game:GetService('RunService').PostSimulation:Connect(function()
 	if shared.config.serverhop.enabled then
 		if #Players:GetPlayers() <= shared.config.serverhop.player_threshold then
-            print('player')
-			--ServerHop()
+			ServerHop()
 		end
 		if shared.config.serverhop.ping_check and CheckPing then
 			if game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue() >= shared.config.serverhop.ping_threshold then
-                print('ping')
-				--ServerHop()
+				ServerHop()
 			end
 		end
 	end
