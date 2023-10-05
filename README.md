@@ -57,15 +57,16 @@ shared.config = {
 	position_offset = 5, -- Only works if position is Behind or Front
 	player_detection = 'Closest', -- Closest , Farthest , Ball Target
 	serverhop = {
-		enabled = true,
+		enabled = false,
 		player_threshold = 3,
-		ping_check = true,
-		ping_threshold = 150,
+		ping_check = false,
+		ping_threshold = 200,
 		load_time = 10 -- Time before it starts checking ping
 	},
 	bladeball = {
 		local_alive_check = true,
-		alive_check = true
+		alive_check = true,
+		invisible_check = true
 	}
 }
 
