@@ -56,7 +56,10 @@ shared.config = {
 	position = 'Behind', -- Behind , Front , Normal
 	position_offset = 5, -- Only works if position is Behind or Front
 	player_detection = 'Closest', -- Closest , Farthest , Ball Target
-	
+	serverhop = {
+		enabled = true,
+		player_threshold = 5
+	},
 	bladeball = {
 		local_alive_check = true,
 		alive_check = true
