@@ -97,6 +97,10 @@ function findClosestPlayer()
         	continue
         end
         
+        if shared.config.bladeball.invisible_check and Char:FindFirstChild('Head').Transparency == 1 then
+        	continue
+        end
+        
         if Humanoid.Health <= 0 then
             continue
         end
@@ -124,6 +128,10 @@ function findFarthestPlayer()
         end
         
         if shared.config.bladeball.alive_check and workspace.Dead:FindFirstChild(player.Name) then
+        	continue
+        end
+        
+        if shared.config.bladeball.invisible_check and Char:FindFirstChild('Head').Transparency == 1 then
         	continue
         end
         
